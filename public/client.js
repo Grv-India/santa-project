@@ -10,6 +10,13 @@ const santaForm = document.forms[0];
 
 // listen for the form to be submitted and add a new dream when it is
 santaForm.onsubmit = function (event) {
-  // TODO: check the text isn't more than 100chars before submitting
-  // event.preventDefault();
+  //prevent default action of the event
+  event.preventDefault();
+  //char length check , limit 100 char
+  if(santaForm?.wish?.value?.length <= 100){
+    santaForm.submit();
+  }else if(santaForm?.wish?.value?.length > 100){
+    //char limit exceeded alert
+    alert('Char limit for making a wish is 100 chars, Kindly shorten up!!..');
+  }
 };

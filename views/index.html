@@ -35,11 +35,12 @@
   <main>
     <p class="bold">Ho ho ho, what you want for christma?</p>
 
-    who are you?
-    <input name="userid" placeholder="charlie.brown" />
-    <form method="post">
-      what do you want for christmas?
-      <textarea name="wish" rows="10" cols="45" maxlength="100" placeholder="Gifts!"></textarea>
+    <form method="post" action="/">
+      <label for="userid">who are you?</label>
+      <input name="userid" placeholder="charlie.brown" />
+      <label for="wish">what do you want for christmas?</label>
+      <!-----Textarea can take upto 150 chars but submit limit is 100 chars-->
+      <textarea name="wish" rows="10" cols="45" maxlength="150" placeholder="Gifts!"></textarea>
       <br/>
       <button type="submit" id="submit-letter">Send</button>
     </form>
