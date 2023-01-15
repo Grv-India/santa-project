@@ -36,6 +36,7 @@ async function main() {
       if (childrenData.length) {
         //send mails to all the added children
         //don't move ahead until the process is complete
+        console.log("Email: waiting for completion of send email job");
         let info = await Promise.all(
           childrenData.map((ele) => {
             return transporter.sendMail({
@@ -60,7 +61,9 @@ async function main() {
       }
     } catch (e) {
       //in case of any error while sending mails
+      //recreate the ethereal account in case of error
       console.log("error", e);
+      accountSetupComplete = false;
     }
     //call the main function again so that we keep process alive
     main();
