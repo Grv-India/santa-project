@@ -60,7 +60,7 @@ app.use(express.static("public"));
 
     app.post("/", (request, response) => {
       //if userid is not send then sent a failure msg
-      if (request?.body?.userid) {
+      if (request.body.userid) {
         //check if user exists and fullfill the set criteria
         let checkRegistration = dataProcess(request.body.userid);
 
